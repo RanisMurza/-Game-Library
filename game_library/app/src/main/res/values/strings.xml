@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">game_library</string>
+    <string name="play">Play</string>
+    <string name="blackjack">Блэкджек</string>
+    <string name="viselica">Виселица</string>
+    <string name="memory">Мемори</string>
+    <string name="tic_tac_toe">Крестики-нолики</string>
+</resources>
