@@ -10,7 +10,20 @@
         android:name="com.ranis.game_library.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu"
-        />
+        >
+        <action
+            android:id="@+id/action_menuFragment_to_blackjackFragment"
+            app:destination="@id/blackjackFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_gallowsFragment"
+            app:destination="@id/gallowsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_memoryFragment"
+            app:destination="@id/memoryFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_ticTacToeFragment"
+            app:destination="@id/ticTacToeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/mainFragment"
@@ -21,4 +34,28 @@
             android:id="@+id/action_mainFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/blackjackFragment"
+        android:name="com.ranis.game_library.BlackjackFragment"
+        android:label="BlackjackFragment"
+        tools:layout="@layout/fragment_blackjack"
+        />
+    <fragment
+        android:id="@+id/gallowsFragment"
+        android:name="com.ranis.game_library.GallowsFragment"
+        android:label="GallowsFragment"
+        tools:layout="@layout/fragment_gallows"
+        />
+    <fragment
+        android:id="@+id/memoryFragment"
+        android:name="com.ranis.game_library.MemoryFragment"
+        android:label="MemoryFragment"
+        tools:layout="@layout/fragment_memory"
+        />
+    <fragment
+        android:id="@+id/ticTacToeFragment"
+        android:name="com.ranis.game_library.TicTacToeFragment"
+        android:label="TicTacToeFragment"
+        tools:layout="@layout/fragment_tic_tac_toe"
+        />
 </navigation>

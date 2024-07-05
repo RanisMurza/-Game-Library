@@ -13,9 +13,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMainBinding.bind(view)
-        val button = view.findViewById<Button>(R.id.button)
-        button?.setOnClickListener{
-            findNavController().navigate(R.id.action_mainFragment_to_menuFragment)
+
+        binding?.run {
+            buttonPlay.setOnClickListener{
+                findNavController().navigate(R.id.action_mainFragment_to_menuFragment)
+            }
         }
     }
 
