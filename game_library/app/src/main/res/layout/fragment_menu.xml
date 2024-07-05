@@ -1,54 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MenuFragment"
-    >
+    tools:context=".MenuFragment">
 
-
-    <Button
-        android:id="@+id/button_1"
+    <TextView
+        android:id="@+id/tvText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/choose_a_game"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/button_blackjack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_rounded_footer"
+        android:backgroundTint="#3F51B5"
+        android:fontFamily="@font/nunito_bold"
         android:text="@string/blackjack"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="184dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvText" />
 
-    <Button
-        android:id="@+id/button_2"
-        android:layout_width="wrap_content"
+    <android.widget.Button
+        android:id="@+id/button_gallows"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_rounded_footer"
+        android:backgroundTint="#3F51B5"
+        android:fontFamily="@font/nunito_bold"
         android:text="@string/viselica"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_1"
-        android:layout_marginTop="32dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_blackjack" />
 
-    <Button
-        android:id="@+id/button_3"
-        android:layout_width="wrap_content"
+    <android.widget.Button
+        android:id="@+id/button_memory"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_rounded_footer"
+        android:backgroundTint="#3F51B5"
+        android:fontFamily="@font/nunito_bold"
         android:text="@string/memory"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_2"
-        android:layout_marginTop="32dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_gallows" />
 
-    <Button
-        android:id="@+id/button_4"
-        android:layout_width="wrap_content"
+    <android.widget.Button
+        android:id="@+id/button_tic_tac_toe"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_rounded_footer"
+        android:backgroundTint="#3F51B5"
+        android:fontFamily="@font/nunito_bold"
         android:text="@string/tic_tac_toe"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_3"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_memory" />
 </androidx.constraintlayout.widget.ConstraintLayout>

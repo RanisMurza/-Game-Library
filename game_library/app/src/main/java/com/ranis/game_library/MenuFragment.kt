@@ -14,16 +14,16 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         binding = FragmentMenuBinding.bind(view)
 
         binding?.run {
-            button1.setOnClickListener{
+            buttonBlackjack.setOnClickListener{
                 findNavController().navigate(R.id.action_menuFragment_to_blackjackFragment)
             }
-            button2.setOnClickListener{
+            buttonGallows.setOnClickListener{
                 findNavController().navigate(R.id.action_menuFragment_to_gallowsFragment)
             }
-            button3.setOnClickListener{
+            buttonMemory.setOnClickListener{
                 findNavController().navigate(R.id.action_menuFragment_to_memoryFragment)
             }
-            button4.setOnClickListener{
+            buttonTicTacToe.setOnClickListener{
                 findNavController().navigate(R.id.action_menuFragment_to_ticTacToeFragment)
             }
         }
