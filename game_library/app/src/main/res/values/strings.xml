@@ -7,4 +7,6 @@
     <string name="tic_tac_toe">Крестики-нолики</string>
     <string name="the_universe_of_games">The universe of games</string>
     <string name="choose_a_game">Choose a game</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
