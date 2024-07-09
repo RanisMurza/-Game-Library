@@ -99,7 +99,7 @@
         <action
             android:id="@+id/action_memoryWinFragment3_to_menuFragment"
             app:destination="@id/menuFragment" />
-
+      </fragment>
       <fragment
         android:id="@+id/blackjackPlayFragment"
         android:name="com.ranis.game_library.blackjack.BlackjackPlayFragment"
