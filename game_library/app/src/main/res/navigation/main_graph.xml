@@ -36,10 +36,17 @@
     </fragment>
     <fragment
         android:id="@+id/blackjackFragment"
-        android:name="com.ranis.game_library.BlackjackFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackFragment"
         android:label="BlackjackFragment"
         tools:layout="@layout/fragment_blackjack"
-        />
+        >
+        <action
+            android:id="@+id/action_blackjackFragment_to_blackjackPlayFragment"
+            app:destination="@id/blackjackPlayFragment" />
+        <action
+            android:id="@+id/action_blackjackFragment_to_blackjackRulesFragment"
+            app:destination="@id/blackjackRulesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gallowsFragment"
         android:name="com.ranis.game_library.GallowsFragment"
@@ -58,4 +65,24 @@
         android:label="TicTacToeFragment"
         tools:layout="@layout/fragment_tic_tac_toe"
         />
+    <fragment
+        android:id="@+id/blackjackPlayFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackPlayFragment"
+        android:label="BlackjackPlayFragment"
+        tools:layout="@layout/fragment_play_blackjack"
+        >
+        <action
+            android:id="@+id/action_blackjackPlayFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blackjackRulesFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackRulesFragment"
+        android:label="BlackjackRulesFragment"
+        tools:layout="@layout/fragment_rules_blackjack"
+        >
+        <action
+            android:id="@+id/action_blackjackRulesFragment_to_blackjackFragment"
+            app:destination="@id/blackjackFragment" />
+    </fragment>
 </navigation>
