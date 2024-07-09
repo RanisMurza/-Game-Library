@@ -1,36 +1,41 @@
-package com.ranis.game_library
+package com.ranis.game_library.memory
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.DecelerateInterpolator
-import android.widget.Button
-import android.widget.GridLayout
-import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.ranis.game_library.R
 import com.ranis.game_library.databinding.FragmentMemoryBinding
 import com.ranis.game_library.databinding.IconCardBinding
 
 class MemoryFragment : Fragment(R.layout.fragment_memory) {
     private var binding: FragmentMemoryBinding? = null
     private val buttons = ArrayList<MemoryGameButton>()
-    private val cardImages = mutableListOf(
-        R.drawable.corn_cat, R.drawable.corn_cat
 
-    )
     private val flipAnimation = MemoryFlipAnimation()
     private var firstCard: MemoryGameButton? = null
     private var secondCard: MemoryGameButton? = null
     private var isBusy = false
 
+    private val memoryData = MemoryData
+    private val cardImages = memoryData.cardImages
+    private var timer: CountDownTimer? = null
+    private val timerDuration: Long = 60000
+    private var pairsFound = 0
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMemoryBinding.bind(view)
 
+        initGame()
         binding!!.resetButton.setOnClickListener { initGame() }
+        binding!!.reternButton.setOnClickListener{
+            findNavController().navigate(R.id.action_memoryFragment_to_menuFragment)
+        }
     }
 
     override fun onDestroyView() {
@@ -43,6 +48,7 @@ class MemoryFragment : Fragment(R.layout.fragment_memory) {
         cardImages.shuffle()
         binding!!.gridLayout.removeAllViews()
         buttons.clear()
+        pairsFound = 0
 
         for (i in cardImages.indices) {
             val cardBinding = IconCardBinding.inflate(LayoutInflater.from(requireContext()), binding!!.gridLayout, false)
@@ -57,6 +63,8 @@ class MemoryFragment : Fragment(R.layout.fragment_memory) {
             buttons.add(memoryButton)
             binding!!.gridLayout.addView(cardBinding.root)
         }
+
+        initTimer()
 
     }
 
@@ -88,6 +96,12 @@ class MemoryFragment : Fragment(R.layout.fragment_memory) {
             firstCard = null
             secondCard = null
             isBusy = false
+            pairsFound++
+
+            if (pairsFound == cardImages.size / 2) {
+                timer?.cancel()
+                findNavController().navigate(R.id.action_memoryFragment_to_memoryWinFragment3)
+            }
         } else {
             Handler(Looper.getMainLooper()).postDelayed({
                 firstButton?.let { flipAnimation.flipCardBack(it) }
@@ -97,5 +111,20 @@ class MemoryFragment : Fragment(R.layout.fragment_memory) {
                 isBusy = false
             }, 500)
         }
+    }
+
+    private fun initTimer(){
+        timer?.cancel()
+        timer = object : CountDownTimer(timerDuration, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                binding?.timerTextView?.text = String.format("%02d:%02d", secondsRemaining / 60, secondsRemaining % 60)
+            }
+
+            override fun onFinish() {
+                binding?.timerTextView?.text = "00:00"
+                findNavController().navigate(R.id.action_memoryFragment_to_memoryDefeatFragment2)
+            }
+        }.start()
     }
 }

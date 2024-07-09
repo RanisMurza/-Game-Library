@@ -2,43 +2,104 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/android_memory_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MemoryFragment">
+    tools:context=".memory.MemoryFragment">
 
-    <TextView
-        android:id="@+id/txText"
+    <ImageView
+        android:id="@+id/memoryHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/memory"
-        android:textSize="32sp"
+        android:src="@drawable/memory_game_header"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_top"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_right"
         />
 
-    <Button
+    <ImageButton
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reset"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_restart"
+        app:layout_constraintTop_toBottomOf="@+id/memoryHeader"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_right"
         />
 
-    <GridLayout
-        android:id="@+id/gridLayout"
+    <ImageButton
+        android:id="@+id/reternButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </GridLayout>
+        android:paddingTop="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_exit"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+        app:layout_constraintTop_toBottomOf="@+id/resetButton" />
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="24sp"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/backgroundImageView"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"/>
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:background="@drawable/white_background"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintTop_toBottomOf="@+id/resetButton"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"/>
+
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:rowCount="4"
+            android:useDefaultMargins="false"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintTop_toBottomOf="@+id/resetButton"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left">
+        </GridLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="40dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

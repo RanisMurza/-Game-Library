@@ -1,7 +1,8 @@
-package com.ranis.game_library
+package com.ranis.game_library.memory
 
 import android.view.animation.DecelerateInterpolator
 import android.widget.ImageButton
+import com.ranis.game_library.R
 
 class MemoryFlipAnimation {
     fun flipCard(button: ImageButton, imageResId: Int) {
@@ -30,7 +31,7 @@ class MemoryFlipAnimation {
             .setInterpolator(DecelerateInterpolator())
             .setDuration(300)
             .withEndAction {
-                button.setBackgroundResource(R.drawable.ic_launcher_background)
+                button.setBackgroundResource(R.drawable.card_back)
                 button.rotationY = -90f
                 button.animate()
                     .withLayer()

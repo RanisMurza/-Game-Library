@@ -1,4 +1,4 @@
-package com.ranis.game_library
+package com.ranis.game_library.memory
 
 import android.widget.ImageButton
 
