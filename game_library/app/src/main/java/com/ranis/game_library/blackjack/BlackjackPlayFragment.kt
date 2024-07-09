@@ -255,7 +255,7 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
             }
             binding?.run {
                 money += bet * 2
-                tvMoney.text = "Money $money"
+                tvMoney.text = "Money: $money"
                 tvInfoText.text = "You've won, Blackjack!"
                 playAgain.visibility = View.VISIBLE
                 //cleaningBeforeRound()
