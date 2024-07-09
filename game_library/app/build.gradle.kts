@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -15,6 +16,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        named("main") {
+            res.srcDirs("src/main/res/drawable_memory_game")
+            res.srcDirs("src/main/res/drawable_memory")
+        }
     }
 
     buildTypes {
@@ -40,7 +48,7 @@ android {
 }
 
 dependencies {
-    val nav_version = "2.7.7"
+    implementation(libs.support.annotations)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
@@ -49,6 +57,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.annotation)
+//    implementation(libs.support.v4)
+//    implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
