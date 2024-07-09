@@ -127,6 +127,7 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
             }
 
             buttonHit.setOnClickListener{
+                stand = true
                 if(hit && player.getHand().calculatorValue() <= 19){
                     player.hit(deck, discarded)
                     countCardsPlayer++
@@ -137,6 +138,12 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
                         tvInfoText.text = "You've lost,more 21"
                         playAgain.visibility = View.VISIBLE
                     }else if(player.getHand().calculatorValue() == 20){
+                        binding?.run {
+                            tvInfoText.text = "Enter in STAND"
+                            hit = false
+                            stand = true
+                        }
+                    }else if(player.getHand().calculatorValue() == 21){
                         binding?.run {
                             tvInfoText.text = "Enter in STAND"
                             hit = false
@@ -153,14 +160,10 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
                 }
             }
             buttonStand.setOnClickListener{
-                if(stand){
-                    binding?.run {
-                        tvInfoText.text = "Dealer's move"
-                    }
-                    dealerOpenSecondCard()
-                }else{
-                    Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show()
+                binding?.run {
+                    tvInfoText.text = "Dealer's move"
                 }
+                dealerOpenSecondCard()
 
             }
         }
@@ -184,12 +187,6 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
 
 
     fun startRound(){
-        if(money < 10){
-            money = 5000
-            binding?.run {
-                tvMoney.text = "Money: $money"
-            }
-        }
         money -= bet
         binding?.run {
             tvMoney.text = "Money: $money"
@@ -274,6 +271,7 @@ class BlackjackPlayFragment : Fragment(R.layout.fragment_play_blackjack) {
             binding?.run {
                 tvInfoText.text = "Enter in STAND"
                 hit = false
+                stand = true
             }
         }else{
             hit = true
