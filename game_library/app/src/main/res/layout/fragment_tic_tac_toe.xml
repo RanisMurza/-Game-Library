@@ -1,20 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".TicTacToeFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tictactoe.TicTacToeFragment">
 
-    <TextView
-        android:id="@+id/txText"
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@color/blue"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="@id/gridTTT"
+        app:layout_constraintStart_toStartOf="@id/gridTTT"
+        app:layout_constraintEnd_toEndOf="@id/gridTTT"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@color/blue"
+        android:layout_marginBottom="196dp"
+        app:layout_constraintBottom_toBottomOf="@id/gridTTT"
+        app:layout_constraintStart_toStartOf="@id/gridTTT"
+        app:layout_constraintEnd_toEndOf="@id/gridTTT"
+        />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        android:layout_marginStart="90dp"
+        app:layout_constraintStart_toStartOf="@id/gridTTT"
+        app:layout_constraintTop_toTopOf="@id/gridTTT"
+        app:layout_constraintBottom_toBottomOf="@id/gridTTT"
+        />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        android:layout_marginStart="186dp"
+        app:layout_constraintStart_toStartOf="@id/gridTTT"
+        app:layout_constraintTop_toTopOf="@id/gridTTT"
+        app:layout_constraintBottom_toBottomOf="@id/gridTTT"
+        />
+
+
+    <GridLayout
+        android:id="@+id/gridTTT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:columnCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button00"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginBottom="4dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="X" />
+
+        <Button
+            android:id="@+id/button10"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="2" />
+
+        <Button
+            android:id="@+id/button20"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="3" />
+
+        <Button
+            android:id="@+id/button01"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginBottom="4dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="4" />
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="5" />
+
+        <Button
+            android:id="@+id/button21"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/button02"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="7" />
+
+        <Button
+            android:id="@+id/button12"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="8" />
+
+        <Button
+            android:id="@+id/button22"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:text="9" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:visibility="gone"
+        android:id="@+id/gridXO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gridTTT">
+
+        <Button
+            android:id="@+id/xButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="140dp"
+
+            android:layout_height="match_parent"
+            android:text="@string/x"
+            android:textSize="30sp"
+            android:textColor="@color/blue"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/blue" />
+
+        <Button
+            android:id="@+id/oButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:text="@string/o"
+            android:textSize="30sp"
+            android:textColor="@color/grey"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/grey"/>
+
+    </GridLayout>
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/gridTTT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipX"
+            style="@style/CustomChipChoice"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="@string/x"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:chipBackgroundColor="@color/design_default_color_surface"
+            app:chipCornerRadius="6dp"
+            app:chipStrokeWidth="3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipO"
+            style="@style/CustomChipChoice"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="@string/o"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:chipBackgroundColor="@color/design_default_color_surface"
+            app:chipCornerRadius="6dp"
+            app:chipStrokeWidth="3dp" />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ttt_start"
+        android:textSize="24sp"
+        android:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/tic_tac_toe"
-        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/gridTTT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.MaterialComponents.Button"
         />
+
+    <TextView
+        android:id="@+id/tvTie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black_regular"
+        android:textColor="@color/blue"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridTTT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+        tools:text="It's a tie!" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

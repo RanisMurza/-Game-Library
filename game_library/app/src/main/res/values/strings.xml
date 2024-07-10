@@ -7,8 +7,6 @@
     <string name="tic_tac_toe">Крестики-нолики</string>
     <string name="the_universe_of_games">The universe of games</string>
     <string name="choose_a_game">Choose a game</string>
-
-    //gallows
     <string name="A">A</string>
     <string name="B">B</string>
     <string name="C">C</string>
@@ -36,4 +34,33 @@
     <string name="Y">Y</string>
     <string name="Z">Z</string>
     <string name="word">_ _ _ _ _</string>
+    <string name="choosePlayer">Выберите, за кого будете играть:</string>
+    <string name="x">x</string>
+    <string name="o">o</string>
+    <string name="ttt_start">Start</string>
+    <string name="welcome_to_blackjack">Welcome to Blackjack</string>
+    <string name="rules">Rules</string>
+    <string name="_5000">5000</string>
+    <string name="_0">0</string>
+    <string name="money_5000">Money: 5000</string>
+    <string name="bet_0">Bet: 0</string>
+    <string name="game_rules">Правила игры</string>
+    <string name="rule_1">1. Цель игрока — собрать руку, сумма очков в которой превышает сумму очков у дилера. Важно собрать не более 21 очков, в ином случае игрок проигрывает (перебор).</string>
+    <string name="rule_2">2. Для игры используется стандартные колоды из 36 или 56 карт.</string>
+    <string name="rule_3">3. Для участия в игре игрок должен сделать ставку.</string>
+    <string name="rule_4">4. После того как все ставки сделаны, дилер раздает игрокам по две карты в открытую, а себе одну открытую и одну закрытую карты.</string>
+    <string name="rule_5">5. После того как игрок и дилер завершили брать карты, сравниваются значения финальных рук дилера и игрока.</string>
+    <string name="rule_6">6. Если сумма очков у игрока больше, чем у дилера, то он получает выплату 1 к 1 от своей ставки.</string>
+    <string name="rule_7">7. Если суммы очков равны (за исключением блэкджек), то это ничья и игроку возвращается его ставка.</string>
+    <string name="rule_8">8. Если же дилер набрал больше очков, то игрок проигрывает.</string>
+    <string name="rule_9">Если первые две карты в сумме дают 21 очко, то такая комбинация называется блэкджек.</string>
+    <string name="ok">OK</string>
+    <string name="dealer_s_hand">Dealer\'s hand:</string>
+    <string name="your_hand">Your hand:</string>
+    <string name="clear">Clear</string>
+    <string name="deal">Deal</string>
+    <string name="hit">Hit</string>
+    <string name="stand">Stand</string>
+    <string name="place_a_bet">Place a bet</string>
+    <string name="play_again">Play again</string>
 </resources>
