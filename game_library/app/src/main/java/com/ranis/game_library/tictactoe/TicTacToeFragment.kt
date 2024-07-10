@@ -1,12 +1,20 @@
 package com.ranis.game_library.tictactoe
 
+import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.graphics.Color
 import android.graphics.fonts.Font
 import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import android.provider.CalendarContract.Colors
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.PopupWindow
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.ranis.game_library.R
 import com.ranis.game_library.databinding.FragmentTicTacToeBinding
@@ -47,6 +55,8 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
                 buttonStart.text = "Restart"
 
                 game.resetBoard()
+                tvTie.text = ""
+                chipX.isChecked = true
                 currCell = Cell.X
                 filledCells = 0
                 for (button in tableButtons as List<*>) { // enable the buttons and clear them
@@ -81,24 +91,37 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
         if (winner != null) {
             printWinner(winner)
             disableTableButtons()
-        }
-
-        //if the table is full
-        if (filledCells == 9) {
-            printTie()
-            disableTableButtons()
-        }
-        //if stopButtonTriggered -> break
-
-        currCell = if (currCell == Cell.X) {
-            Cell.O
         } else {
-            Cell.X
+            //if the table is full
+            if (filledCells == 9) {
+                printTie()
+                disableTableButtons()
+            }
+            //if stopButtonTriggered -> break
+
+            changeCurrCellChip()
+            currCell = if (currCell == Cell.X) {
+                Cell.O
+            } else {
+                Cell.X
+            }
+        }
+    }
+
+    private fun changeCurrCellChip() {
+        binding?.run {
+            if (currCell == Cell.X) {
+                chipO.isChecked = true
+            } else {
+                chipX.isChecked = true
+            }
         }
     }
 
     private fun printTie() {
-        //todo
+        binding?.run {
+            tvTie.text = "It's a tie!"
+        }
     }
 
     private fun printWinner(winner: List<Pair<Int, Int>>) {
@@ -124,15 +147,6 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
         super.onDestroyView()
         binding = null
     }
-}
-
-
-
-
-
-
-enum class Player {
-    HUMAN, AI
 }
 
 enum class Cell {
