@@ -1,24 +1,13 @@
 package com.ranis.game_library.tictactoe
 
-import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.graphics.Color
-import android.graphics.fonts.Font
-import android.graphics.fonts.FontStyle
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
-import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.PopupWindow
-import android.widget.TextView
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.ranis.game_library.R
 import com.ranis.game_library.databinding.FragmentTicTacToeBinding
-import com.ranis.game_library.tictactoe.Game.TicTacToe
+import com.ranis.game_library.tictactoe.game.TicTacToe
 
 class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
     private var binding: FragmentTicTacToeBinding? = null
@@ -54,6 +43,7 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
 
                 buttonStart.text = "Restart"
 
+                //restarting the game
                 game.resetBoard()
                 tvTie.text = ""
                 chipX.isChecked = true
@@ -67,7 +57,6 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
                 }
             }
         }
-
     }
 
     private fun disableTableButtons() {
@@ -96,18 +85,19 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
             if (filledCells == 9) {
                 printTie()
                 disableTableButtons()
-            }
-            //if stopButtonTriggered -> break
-
-            changeCurrCellChip()
-            currCell = if (currCell == Cell.X) {
-                Cell.O
             } else {
-                Cell.X
+                changeCurrCellChip()
+                currCell = if (currCell == Cell.X) {
+                    Cell.O
+                } else {
+                    Cell.X
+                }
             }
+            //if stopButtonTriggered -> break (not Implemented)
         }
     }
 
+    //these chips could've given a player an option to play for X or O when playing with AI
     private fun changeCurrCellChip() {
         binding?.run {
             if (currCell == Cell.X) {
@@ -149,6 +139,7 @@ class TicTacToeFragment : Fragment(R.layout.fragment_tic_tac_toe) {
     }
 }
 
+//ai player -> not implemented
 enum class Cell {
     EMPTY, X, O
 }

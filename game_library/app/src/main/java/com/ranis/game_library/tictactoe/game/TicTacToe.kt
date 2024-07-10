@@ -1,4 +1,4 @@
-package com.ranis.game_library.tictactoe.Game
+package com.ranis.game_library.tictactoe.game
 
 import com.ranis.game_library.tictactoe.Cell
 
