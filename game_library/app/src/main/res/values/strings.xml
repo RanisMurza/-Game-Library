@@ -7,6 +7,10 @@
     <string name="tic_tac_toe">Крестики-нолики</string>
     <string name="the_universe_of_games">The universe of games</string>
     <string name="choose_a_game">Choose a game</string>
+    <string name="choosePlayer">Выберите, за кого будете играть:</string>
+    <string name="x">x</string>
+    <string name="o">o</string>
+    <string name="ttt_start">Start</string>
     <string name="welcome_to_blackjack">Welcome to Blackjack</string>
     <string name="rules">Rules</string>
     <string name="_5000">5000</string>

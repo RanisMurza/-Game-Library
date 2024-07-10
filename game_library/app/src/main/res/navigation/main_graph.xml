@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/ticTacToeFragment"
-        android:name="com.ranis.game_library.TicTacToeFragment"
+        android:name="com.ranis.game_library.tictactoe.TicTacToeFragment"
         android:label="TicTacToeFragment"
         tools:layout="@layout/fragment_tic_tac_toe"
         />
