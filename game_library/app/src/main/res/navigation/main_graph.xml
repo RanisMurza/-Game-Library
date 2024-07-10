@@ -36,10 +36,17 @@
     </fragment>
     <fragment
         android:id="@+id/blackjackFragment"
-        android:name="com.ranis.game_library.BlackjackFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackFragment"
         android:label="BlackjackFragment"
         tools:layout="@layout/fragment_blackjack"
-        />
+        >
+        <action
+            android:id="@+id/action_blackjackFragment_to_blackjackPlayFragment"
+            app:destination="@id/blackjackPlayFragment" />
+        <action
+            android:id="@+id/action_blackjackFragment_to_blackjackRulesFragment"
+            app:destination="@id/blackjackRulesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gallowsFragment"
         android:name="com.ranis.game_library.GallowsFragment"
@@ -48,14 +55,69 @@
         />
     <fragment
         android:id="@+id/memoryFragment"
-        android:name="com.ranis.game_library.MemoryFragment"
+        android:name="com.ranis.game_library.memory.MemoryFragment"
         android:label="MemoryFragment"
         tools:layout="@layout/fragment_memory"
-        />
+        >
+        <action
+            android:id="@+id/action_memoryFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_memoryFragment_to_memoryDefeatFragment2"
+            app:destination="@id/memoryDefeatFragment2" />
+        <action
+            android:id="@+id/action_memoryFragment_to_memoryWinFragment3"
+            app:destination="@id/memoryWinFragment3" />
+    </fragment>
     <fragment
         android:id="@+id/ticTacToeFragment"
         android:name="com.ranis.game_library.tictactoe.TicTacToeFragment"
         android:label="TicTacToeFragment"
         tools:layout="@layout/fragment_tic_tac_toe"
         />
+    <fragment
+
+        android:id="@+id/memoryDefeatFragment2"
+        android:name="com.ranis.game_library.memory.MemoryDefeatFragment"
+        android:label="fragment_memory_defeat"
+        tools:layout="@layout/fragment_memory_defeat" >
+        <action
+            android:id="@+id/action_memoryDefeatFragment2_to_memoryFragment"
+            app:destination="@id/memoryFragment" />
+        <action
+            android:id="@+id/action_memoryDefeatFragment2_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoryWinFragment3"
+        android:name="com.ranis.game_library.memory.MemoryWinFragment"
+        android:label="fragment_memory_win"
+        tools:layout="@layout/fragment_memory_win" >
+        <action
+            android:id="@+id/action_memoryWinFragment3_to_memoryFragment"
+            app:destination="@id/memoryFragment" />
+        <action
+            android:id="@+id/action_memoryWinFragment3_to_menuFragment"
+            app:destination="@id/menuFragment" />
+      </fragment>
+      <fragment
+        android:id="@+id/blackjackPlayFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackPlayFragment"
+        android:label="BlackjackPlayFragment"
+        tools:layout="@layout/fragment_play_blackjack"
+        >
+        <action
+            android:id="@+id/action_blackjackPlayFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blackjackRulesFragment"
+        android:name="com.ranis.game_library.blackjack.BlackjackRulesFragment"
+        android:label="BlackjackRulesFragment"
+        tools:layout="@layout/fragment_rules_blackjack"
+        >
+        <action
+            android:id="@+id/action_blackjackRulesFragment_to_blackjackFragment"
+            app:destination="@id/blackjackFragment" />
+    </fragment>
 </navigation>
