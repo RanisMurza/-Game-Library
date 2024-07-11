@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.ranis.game_library.MenuFragment"
+        android:name="com.ranis.game_library.main.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu"
         >
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ranis.game_library.MainFragment"
+        android:name="com.ranis.game_library.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/gallowsFragment"
-        android:name="com.ranis.game_library.GallowsFragment"
+        android:name="com.ranis.game_library.gallows.GallowsFragment"
         android:label="GallowsFragment"
         tools:layout="@layout/fragment_gallows"
         />
